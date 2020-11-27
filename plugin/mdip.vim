@@ -185,7 +185,7 @@ function! mdip#MarkdownClipboardImage()
         let extension = split(tmpfile, '\.')[-1]
         let relpath = g:mdip_imgdir_intext . '/' . g:mdip_tmpname . '.' . extension
         let ipos = getcurpos()
-        execute "normal! i\includegraphics{" . relpath . "}"
+        execute "normal! i\\includegraphics{" . relpath . "}"
         call setpos('.', ipos)
         execute "normal! vt]\<C-g>"
     endif
